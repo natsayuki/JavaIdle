@@ -1,0 +1,10 @@
+.feedLabel{
+    -fx-text-fill: white;
+}
+.hidden{
+    visibility: hidden;
+}
+.followerMenu{
+    -fx-background-color: blue;
+    -fx-border-color: blue;
+}

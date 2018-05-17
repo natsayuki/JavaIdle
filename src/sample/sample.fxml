@@ -1,0 +1,233 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.stage.Screen?>
+<?import javafx.scene.control.TitledPane?>
+<BorderPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml">
+    <center>
+        <GridPane prefWidth="100" prefHeight="100" styleClass="followerMenu">
+
+        </GridPane>
+        <Button text="Hand Pamphlet" fx:id="handPamphletButton" onAction="#handleClick">
+            <font><Font name="Comic Sans MS"/></font>
+        </Button>
+    </center>
+    <right>
+        <VBox prefWidth="250" style="-fx-background-color: black;" fx:id="feedBox">
+            <Label styleClass="feedLabel" text="" fx:id="feedLabel" wrapText="true"/>
+        </VBox>
+    </right>
+    <top>
+        <HBox>
+            <Label text="Pamphlets: ">
+                <font><Font name="Comic Sans MS"/></font>
+            </Label>
+            <Label text="10" fx:id="pamphletCountLabel">
+                <font><Font name="Comic Sans MS"/></font>
+            </Label>
+            <Label text="Followers: " styleClass="hidden" fx:id="followerLabel">
+                <font><Font name="Comic Sans MS"/></font>
+            </Label>
+            <Label text="0" styleClass="hidden" fx:id="followerCountLabel">
+                <font><Font name="Comic Sans MS"/></font>
+            </Label>
+            <Label text="Material: " styleClass="hidden" fx:id="materialLabel">
+                <font><Font name="Comic Sans MS"/></font>
+            </Label>
+            <Label text="0" styleClass="hidden" fx:id="materialCountLabel">
+                <font><Font name="Comic Sans MS"/></font>
+            </Label>
+            <TitledPane text="Meeting Building" fx:id="meetingBuildingPane" styleClass="hidden">
+                <VBox>
+                    <Button fx:id="callMeetingButton" text="Call Meeting" onAction="#handleClick">
+                        <font><Font name="Comic Sans MS"/></font>
+                    </Button>
+                </VBox>
+            </TitledPane>
+            <TitledPane text="HQ" fx:id="HQPane" styleClass="hidden">
+                <VBox>
+                    <Button fx:id="sendExpeditionButton" text="Send Expedition" onAction="#handleClick">
+                        <font><Font name="Comic Sans MS"/></font>
+                    </Button>
+                    <HBox>
+                        <Label text="Expedition Size: ">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Label text="10" fx:id="expeditionSizeLabel">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Button text="+" fx:id="expeditionSizeAddButton" onAction="#handleClick">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Button>
+                        <Button text="-" fx:id="expeditionSizeSubButton" onAction="#handleClick">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Button>
+                    </HBox>
+                </VBox>
+            </TitledPane>
+            <TitledPane text="Expedition Materials" fx:id="expeditionItemsPane" styleClass="hidden">
+                <VBox>
+                    <HBox>
+                        <Label text="Wood: ">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Label fx:id="woodCountLabel" text="0">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                    </HBox>
+                    <HBox>
+                        <Label text="Sand: ">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Label fx:id="sandCountLabel" text="0">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                    </HBox>
+                    <HBox>
+                        <Label text="Gravel: ">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Label fx:id="gravelCountLabel" text="0">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                    </HBox>
+                    <HBox>
+                        <Label text="Stone: ">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Label fx:id="stoneCountLabel" text="0">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                    </HBox>
+                    <HBox>
+                        <Label text="Iron: ">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Label fx:id="ironCountLabel" text="0">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                    </HBox>
+                    <HBox>
+                        <Label text="Gold: ">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Label fx:id="goldCountLabel" text="0">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                    </HBox>
+                    <HBox>
+                        <Label text="Titanium: ">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Label fx:id="titaniumCountLabel" text="0">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                    </HBox>
+                </VBox>
+            </TitledPane>
+        </HBox>
+    </top>
+    <bottom>
+        <HBox>
+            <Button fx:id="acquaintanceButton" text="Acquaintance" styleClass="hidden" onAction="#handleClick">
+                <font><Font name="Comic Sans MS"/></font>
+            </Button>
+            <TitledPane text="Followers" fx:id="followersPane" styleClass="hidden">
+                <VBox>
+                    <HBox>
+                        <Label text="Idle: " fx:id="followerIdleLabel">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Label text="0" fx:id="followersIdleCountLabel">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                    </HBox>
+                    <HBox>
+                        <Label text="Handing: " fx:id="followersHandingLabel">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Label text="0" fx:id="followersHandingCountLabel">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Button text="+" fx:id="followersHandingAddButton" onAction="#handleClick">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Button>
+                        <Button text="-" fx:id="followersHandingSubButton" onAction="#handleClick">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Button>
+                    </HBox>
+                    <HBox>
+                        <Label text="Making: " fx:id="followerMakingLabel">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Label text="0" fx:id="followersMakingCountLabel">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Button text="+" fx:id="followersMakingAddButton" onAction="#handleClick">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Button>
+                        <Button text="-" fx:id="followersMakingSubButton" onAction="#handleClick">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Button>
+                    </HBox>
+                    <HBox fx:id="followersCollectingHBox" styleClass="hidden">
+                        <Label text="Collecting: " fx:id="followersCollectingLabel">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Label text="0" fx:id="followersCollectingCountLabel">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Button text="+" fx:id="followersCollectingAddButton" onAction="#handleClick">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Button>
+                        <Button text="-" fx:id="followersCollectingSubButton" onAction="#handleClick">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Button>
+                    </HBox>
+                </VBox>
+            </TitledPane>
+            <TitledPane text="Expand" fx:id="expandPane" styleClass="hidden">
+                <VBox>
+                    <HBox>
+                        <Label text="Meeting Building" fx:id="expandMeetingBuildingLabel">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Button text="Build" fx:id="expandMeetingBuildingButton" onAction="#handleClick">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Button>
+                    </HBox>
+                    <HBox fx:id="expandHQHBox" styleClass="hidden">
+                        <Label text="Head Quarters (200)" fx:id="expandHQLabel">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Button text="build" fx:id="expandHQButton" onAction="#handleClick">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Button>
+                    </HBox>
+                    <HBox fx:id="expandHousingHBox" styleClass="hidden">
+                        <Label text="Housing (5000)" fx:id="expandHousingLabel">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Button text="Build" fx:id="expandHousingButton" onAction="#handleClick">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Button>
+                    </HBox>
+                    <HBox fx:id="expandBusinessHBox" styleClass="hidden">
+                        <Label text="Business (50000)" fx:id="expandBusinessLabel">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Label>
+                        <Button text="Build" fx:id="expandBusinessButton" onAction="#handleClick">
+                            <font><Font name="Comic Sans MS"/></font>
+                        </Button>
+                    </HBox>
+                </VBox>
+            </TitledPane>
+        </HBox>
+    </bottom>
+</BorderPane>
